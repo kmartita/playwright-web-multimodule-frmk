@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>tech.kmartita</groupId>
+    <artifactId>core-frmk</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>tech.kmartita.tests</groupId>
+  <artifactId>module-tests</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>module-tests</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <!--Module dependencies-->
+    <dependency>
+      <groupId>tech.kmartita.app</groupId>
+      <artifactId>module-app</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <!--Tool dependencies-->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>${testng.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.19.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.rsheremeta</groupId>
+      <artifactId>Allure-Environment-Creator</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/../libs/Allure-Environment-Creator-1.0.jar</systemPath>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>${suiteFile}</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
