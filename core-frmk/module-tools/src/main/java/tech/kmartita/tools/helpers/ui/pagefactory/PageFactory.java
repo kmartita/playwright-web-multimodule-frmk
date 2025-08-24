@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Factory {
+public class PageFactory {
 
     public static void initComponents(Object pageObject, Page page) {
         if (!pageObject.getClass().isAnnotationPresent(UiComponent.class)) {

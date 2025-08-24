@@ -1,7 +1,7 @@
 package tech.kmartita.tools;
 
 import com.microsoft.playwright.Page;
-import tech.kmartita.tools.helpers.ui.pagefactory.Factory;
+import tech.kmartita.tools.helpers.ui.pagefactory.PageFactory;
 
 public abstract class AbstractComponent {
 
@@ -9,7 +9,7 @@ public abstract class AbstractComponent {
 
     protected AbstractComponent() {
         this.page = AbstractApp.getPage();
-        Factory.initComponents(this, page);
+        PageFactory.initComponents(this, page);
 
         waitUntilLoaded();
     }

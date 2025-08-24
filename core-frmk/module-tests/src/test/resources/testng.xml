@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="My Suite" verbose="1">
-    <test name="MyTests"> <!--parallel="tests"-->
+    <test name="MyTests">
         <classes>
             <class name="tech.kmartita.tests.web.VerifyHomePageTest"/>
             <class name="tech.kmartita.tests.web.VerifyComponentTest"/>
