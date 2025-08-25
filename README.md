@@ -76,9 +76,9 @@ It uses custom annotations to systematically define locators and components, whi
 <img width="1880" height="1640" alt="page-design" src="https://github.com/user-attachments/assets/f2af744f-fcb9-45f0-8c6b-f4bb4b8e4349" />
 
 ### Annotations:
-- `@UiPage` : marks a class as a Page Object representing a web page. It supports hierarchical nesting of frames.
-- `@UiComponent` : defines a container locator scope. All child elements and locators are searched within this container.
-- `@UiFind` : specifies locators (CSS or XPath) for elements or lists of elements. Locators can be scoped to either the page or a component container.
+`@UiPage` : marks a class as a Page Object representing a web page. It supports hierarchical nesting of frames.<br/>
+`@UiComponent` : defines a container locator scope. All child elements and locators are searched within this container.<br/>
+`@UiFind` : specifies locators (CSS or XPath) for elements or lists of elements. Locators can be scoped to either the page or a component container.<br/>
 
 ### How it works:
 #### 1. Defining a Page Object:
@@ -185,7 +185,7 @@ mvn test
 1. Before running the commands, go to the `core-frmk` directory.
 2. Create an environment variable file inside the `config` directory (`.env.test`, `.env.dev`, etc.) containing the `BASE_URL` parameter to configure the web URL for testing. This will allow you to easily manage the base URL used during your web tests.<br/>
 ```properties
-BASE_URL=https://example.com
+BASE_URL = https://example.com
 ```
 
 ### Usage examples:
