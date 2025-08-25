@@ -220,10 +220,10 @@ This command starts a local web server and automatically opens the generated rep
 
 ### Allure Report Overview:
 An example of the generated [Allure TestNG](https://allurereport.org/docs/testng/) report looks like this:<br/>
-![overview](images/overview.png)
+<img width="1000" alt="Allure-Overviiew" src="images/overview.png" />
 
 Attached screenshot for failed test:
-![failed](images/failed.png)
+<img width="1000" alt="Allure-Failed-Test" src="images/failed.png" />
 
 All steps are annotated:
-![passed](images/passed.png)
+<img width="1000" alt="Allure-Passed-Test" src="images/passed.png" />
