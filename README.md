@@ -73,7 +73,7 @@ mvn clean compile -U
 This framework implements a scalable, declarative architecture for building Page Objects in Playwright with Java.
 It uses custom annotations to systematically define locators and components, which helps create clean, readable, and maintainable test code, especially suitable for large-scale web applications.<br/>
 
-![page-design.png](readme-screens/page-design.png)
+<img width="1000" alt="Page-Design-Pattern" src="images/page-design.png" />
 
 ### Annotations:
 - `@UiPage` : marks a class as a Page Object representing a web page. It supports hierarchical nesting of frames.
@@ -220,10 +220,10 @@ This command starts a local web server and automatically opens the generated rep
 
 ### Allure Report Overview:
 An example of the generated [Allure TestNG](https://allurereport.org/docs/testng/) report looks like this:<br/>
-![overview](readme-screens/overview.png)
+![overview](images/overview.png)
 
 Attached screenshot for failed test:
-![failed](readme-screens/failed.png)
+![failed](images/failed.png)
 
 All steps are annotated:
-![passed](readme-screens/passed.png)
+![passed](images/passed.png)
