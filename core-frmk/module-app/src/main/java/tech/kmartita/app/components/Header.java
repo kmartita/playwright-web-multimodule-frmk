@@ -14,7 +14,7 @@ import java.util.List;
 //Done:
 // + check with invalid parent selector & invalid child selector
 // + check List<Locator>
-@UiComponent("div#app")
+@UiComponent("div#app_") // _ - invalid to check failed test
 public class Header extends AbstractComponent {
 
     @UiFind("img")
@@ -27,18 +27,17 @@ public class Header extends AbstractComponent {
         return new Button(logo);
     }
 
-    public void clickOn(){
-        logos.forEach(logo -> logo.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE)));
-        logos.get(0).click();
+    @Step("Click on 'logo' image")
+    public void clickOnLogo(){
+        logo.click();
     }
 
-    @Step("Is...")
+    @Step("Check is 'logo' img present")
     public boolean isLogoPresent() {
-        logo.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
         return logo.isVisible();
     }
 
-    @Step("Click On Button")
+    @Step("Click on wrapped button")
     public void clickOnButton() {
         button().click();
     }

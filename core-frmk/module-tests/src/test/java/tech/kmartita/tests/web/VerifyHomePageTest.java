@@ -25,6 +25,8 @@ public class VerifyHomePageTest extends AbstractWebTest {
 
     @Test
     public void verifyPageIsLoaded() {
+        homePage.clickOnFirstLogo();
+
         assertThat(homePage.isLogoPresent())
                 .as("Home page should be opened.")
                 .isTrue();

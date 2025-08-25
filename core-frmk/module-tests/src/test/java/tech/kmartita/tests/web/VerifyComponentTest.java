@@ -27,6 +27,8 @@ public class VerifyComponentTest extends AbstractWebTest {
 
     @Test
     public void verifyComponentIsLoaded() {
+        header.clickOnLogo();
+
         assertThat(header.isLogoPresent())
                 .as("Component should be opened.")
                 .isTrue();

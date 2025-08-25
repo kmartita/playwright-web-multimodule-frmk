@@ -22,9 +22,10 @@ public class HomePage extends AbstractPage {
     @UiFind("img[alt='Selenium Online Training']")
     private Locator logo;
 
-    @Step("Click on 'logo' img")
-    public void clickOn(){
-        logo.click();
+    @Step("Click on one of 'logo' images")
+    public void clickOnFirstLogo(){
+        //logos.forEach(logo -> logo.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE)));
+        logos.get(0).click();
     }
 
     @Step("Check is 'logo' img present")
