@@ -74,6 +74,7 @@ This framework implements a scalable, declarative architecture for building Page
 It uses custom annotations to systematically define locators and components, which helps create clean, readable, and maintainable test code, especially suitable for large-scale web applications.<br/>
 
 <img width="1000" alt="Page-Design-Pattern" src="images/page-design.png" />
+<img width="1880" height="1640" alt="Page-Design-Pattern" src="https://github.com/user-attachments/assets/f3c39817-1627-42c0-86df-f68970cc1c86” />
 
 ### Annotations:
 - `@UiPage` : marks a class as a Page Object representing a web page. It supports hierarchical nesting of frames.
