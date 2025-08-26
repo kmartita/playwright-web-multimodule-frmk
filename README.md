@@ -73,7 +73,7 @@ mvn clean compile -U
 This framework implements a scalable, declarative architecture for building Page Objects in Playwright with Java.
 It uses custom annotations to systematically define locators and components, which helps create clean, readable, and maintainable test code, especially suitable for large-scale web applications.<br/>
 
-<img width="1880" height="1640" alt="page-design" src="https://github.com/user-attachments/assets/f2af744f-fcb9-45f0-8c6b-f4bb4b8e4349" />
+<img width="940" height="820" alt="playwright-design-pattern" src="https://github.com/user-attachments/assets/8f092748-3871-4f29-8682-ff777dfa5555" />
 
 #### Annotations:
 `@UiPage` : marks a class as a Page Object representing a web page. It supports hierarchical nesting of frames.<br/>
