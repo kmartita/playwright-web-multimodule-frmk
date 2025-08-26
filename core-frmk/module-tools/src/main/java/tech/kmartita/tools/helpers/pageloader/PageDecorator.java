@@ -1,4 +1,4 @@
-package tech.kmartita.tools.helpers.ui.pagefactory;
+package tech.kmartita.tools.helpers.pageloader;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;

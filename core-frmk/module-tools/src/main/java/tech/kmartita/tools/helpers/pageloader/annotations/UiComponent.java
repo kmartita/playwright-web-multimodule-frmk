@@ -1,4 +1,4 @@
-package tech.kmartita.tools.helpers.ui.pagefactory.annotations;
+package tech.kmartita.tools.helpers.pageloader.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
-public @interface UiFind {
+@Target(ElementType.TYPE)
+public @interface UiComponent {
     String value();
 }

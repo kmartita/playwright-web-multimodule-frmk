@@ -1,4 +1,4 @@
-package tech.kmartita.tools.helpers.ui.elements;
+package tech.kmartita.tools.helpers.htmlelements;
 
 import tech.kmartita.tools.ILocator;
 

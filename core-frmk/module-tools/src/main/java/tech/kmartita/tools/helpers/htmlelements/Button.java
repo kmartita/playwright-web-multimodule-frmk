@@ -1,4 +1,4 @@
-package tech.kmartita.tools.helpers.ui.elements;
+package tech.kmartita.tools.helpers.htmlelements;
 
 import com.microsoft.playwright.Locator;
 import tech.kmartita.tools.AbstractUiElement;

@@ -1,4 +1,4 @@
-package tech.kmartita.tools.helpers.ui.pagefactory.annotations;
+package tech.kmartita.tools.helpers.pageloader.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

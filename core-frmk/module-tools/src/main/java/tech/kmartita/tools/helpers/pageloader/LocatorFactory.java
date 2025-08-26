@@ -1,11 +1,11 @@
-package tech.kmartita.tools.helpers.ui.pagefactory;
+package tech.kmartita.tools.helpers.pageloader;
 
 import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiComponent;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiPage;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiFind;
+import tech.kmartita.tools.helpers.pageloader.annotations.UiComponent;
+import tech.kmartita.tools.helpers.pageloader.annotations.UiPage;
+import tech.kmartita.tools.helpers.pageloader.annotations.UiFind;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;

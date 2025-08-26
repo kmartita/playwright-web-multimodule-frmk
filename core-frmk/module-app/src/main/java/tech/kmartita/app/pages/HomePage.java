@@ -4,8 +4,8 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.options.LoadState;
 import io.qameta.allure.Step;
 import tech.kmartita.tools.AbstractPage;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiFind;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiPage;
+import tech.kmartita.tools.helpers.pageloader.annotations.UiFind;
+import tech.kmartita.tools.helpers.pageloader.annotations.UiPage;
 
 import java.util.List;
 

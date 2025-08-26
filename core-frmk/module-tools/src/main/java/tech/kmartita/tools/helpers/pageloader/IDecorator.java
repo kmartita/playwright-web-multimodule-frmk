@@ -1,4 +1,4 @@
-package tech.kmartita.tools.helpers.ui.pagefactory;
+package tech.kmartita.tools.helpers.pageloader;
 
 import java.lang.reflect.Field;
 

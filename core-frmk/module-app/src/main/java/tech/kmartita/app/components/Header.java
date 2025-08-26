@@ -1,13 +1,12 @@
 package tech.kmartita.app.components;
 
 import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.options.WaitForSelectorState;
 import io.qameta.allure.Step;
 import tech.kmartita.tools.AbstractComponent;
-import tech.kmartita.tools.helpers.ui.elements.IButton;
-import tech.kmartita.tools.helpers.ui.elements.Button;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiComponent;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiFind;
+import tech.kmartita.tools.helpers.htmlelements.IButton;
+import tech.kmartita.tools.helpers.htmlelements.Button;
+import tech.kmartita.tools.helpers.pageloader.annotations.UiComponent;
+import tech.kmartita.tools.helpers.pageloader.annotations.UiFind;
 
 import java.util.List;
 

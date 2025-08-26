@@ -7,18 +7,18 @@
 # Web Automation Demo Project: Playwright
 This multi-module Java framework for test automation has been built with Maven and utilizes Playwright for browser automation, providing fast, reliable, and headless execution of web tests with detailed reporting and integration capabilities.
 
-### ⚙️ Tech Stack
+### Tech Stack:
 - **Programming Language**: Java
 - **Build Tool**: Maven
 - **UI Automation Framework**: Playwright
 - **Testing Framework**: TestNG
 - **Reporting**: Allure Report
 
-### ✅ Requirements
+### Requirements:
 Requires **Java 17**, **Maven 3.9.x**, and **Allure Report 2.33.x** to be installed and properly configured on your local machine.<br/>
 
 
-# Table of Contents
+## Table of Contents
 1. [Framework Structure](#one)
    * 1.1. [Configuring project](#one-one)
 2. [Page Object Pattern for Playwright](#two)
@@ -27,7 +27,7 @@ Requires **Java 17**, **Maven 3.9.x**, and **Allure Report 2.33.x** to be instal
 
 
 <a id="one"></a>
-## 1. Framework Structure
+### 1. Framework Structure
 The framework is organized as a Maven multi-module project, consisting of three main modules: `module-app`, `module-tests`, and `module-tools`. 
 Each module serves a specific purpose and the dependencies are arranged to ensure proper relationships and integration between them, forming a cohesive test automation framework.<br/>
 ```text
@@ -61,7 +61,7 @@ Each module serves a specific purpose and the dependencies are arranged to ensur
    - `module-tests`. This module contains test classes and test configurations (`testng.xml`). It depends on **module-app** to access page objects and perform web UI testing in a controlled environment.<br/>
 
 <a id="one-one"></a>
-### 1.1. Configuring project
+#### 1.1. Configuring project
 Run this command from the start to ensure that you don't have anything corrupted.<br/>
 ```bash
 cd core-frmk
@@ -69,26 +69,26 @@ mvn clean compile -U
 ```
 
 <a id="two"></a>
-## 2. Page Object Pattern for Playwright
+### 2. Page Object Pattern for Playwright
 This framework implements a scalable, declarative architecture for building Page Objects in Playwright with Java.
 It uses custom annotations to systematically define locators and components, which helps create clean, readable, and maintainable test code, especially suitable for large-scale web applications.<br/>
 
 <img width="1880" height="1640" alt="page-design" src="https://github.com/user-attachments/assets/f2af744f-fcb9-45f0-8c6b-f4bb4b8e4349" />
 
-### Annotations:
+#### Annotations:
 `@UiPage` : marks a class as a Page Object representing a web page. It supports hierarchical nesting of frames.<br/>
 `@UiComponent` : defines a container locator scope. All child elements and locators are searched within this container.<br/>
 `@UiFind` : specifies locators (CSS or XPath) for elements or lists of elements. Locators can be scoped to either the page or a component container.<br/>
 
-### How it works:
-#### 1. Defining a Page Object:
+#### How it works:
+##### 1. Defining a Page Object:
 Simply annotate your page class with `@UiPage`.<br/>
 ```java
 @UiPage
 public class HomePage { }
 ```
 
-#### 2. Declaring Locators:
+##### 2. Declaring Locators:
 Create class fields with your chosen locators and annotate with `@UiFind`. You can declare single locator or lists of locators:<br/>
 ```java
 @UiPage
@@ -109,7 +109,7 @@ List<Locator> elements = page.locator(".list-item").all();
 
 `@UiFind` accepts any Playwright [Selectors](https://playwright.dev/docs/locators#locate-by-css-or-xpath).<br/>
 
-#### 3. Working with Iframes:
+##### 3. Working with Iframes:
 Specify [frame](https://playwright.dev/java/docs/frames) selectors if the page contains iframes.<br/>
 ```java
 @UiPage(frame = {".iframe-foo"})
@@ -126,7 +126,7 @@ Locator myButton = page.frameLocator(".iframe-foo").locator("#iframe-button");
 
 Locators inside a class annotated with `@UiPage(frame = {...})` are scoped to that iframe. Nested iframes can be accessed by passing multiple parameters to frame.<br/>
 
-#### 4. Defining a Component Object:
+##### 4. Defining a Component Object:
 You can define a locator that is scoped under a parent locator, which itself can be a `@UiComponent`. For example:<br/>
 ```java
 @UiComponent("#parent")
@@ -145,20 +145,20 @@ Locator element = page.locator("#parent").locator(".child");
 List<Locator> elements = page.locator("#parent").locator(".list-item").all();
 ```
 
-#### 5. Creating and Using Page / Component Objects:
-Use the `PageFactory` to instantiate your Page Object and pass your Playwright [Page](https://playwright.dev/java/docs/pages) instance:<br/>
+##### 5. Creating and Using Page / Component Objects:
+Use the `PageLoader` to instantiate your Page Object and pass your Playwright [Page](https://playwright.dev/java/docs/pages) instance:<br/>
 ```java
-HomePage homePage = PageFactory.initPages(HomePage.class, page);
+HomePage homePage = PageLoader.initPages(HomePage.class, page);
 ```
 Or your Component Object:<br/>
 ```java
-Header header = PageFactory.initComponents(Header.class, page);
+Header header = PageLoader.initComponents(Header.class, page);
 ```
-The `PageFactory` can instantiate any page or component class that has a constructor accepting only a Playwright Page. 
+The `PageLoader` can instantiate any page or component class that has a constructor accepting only a Playwright Page. 
 Please refer to `AbstractPage` and `AbstractComponent` respectively.<br/>
 
 <a id="three"></a>
-## 3. Tests Execution
+### 3. Tests Execution
 Maven is used as the build and test management tool, with additional options for test configuration:<br/>
 `-Denv={String}`  specifies the environment for test execution (default: `test`)<br/>
 `-Dbrowser={String}` - defines the browser to run tests on (default: `chrome`)<br/>
@@ -166,29 +166,29 @@ Maven is used as the build and test management tool, with additional options for
 `-Dthreads={int}` -  specifies the number of threads for parallel test execution<br/>
 `-Dtest={String}` - the specific test class to run<br/>
 
-### Supported Browsers:
+#### Supported Browsers:
 * Chromium
 * Firefox
 * WebKit
 
-### Common Maven Commands:
-Removes the `target` directory before running tests. Ensures that previous results do not affect the Allure report.
+#### Common Maven Commands:
+1. Removes the `target` directory before running tests. Ensures that previous results do not affect the Allure report.
 ```bash
 mvn clean
 ```
-Runs tests defined in your `testng.xml`, using default system property settings (e.g., env, browser). By default, it executes with Chrome.<br/>
+2. Runs tests defined in your `testng.xml`, using default system property settings (e.g., env, browser). By default, it executes with Chrome.<br/>
 ```bash
 mvn test
 ```
 
-❗️ **_Note:_**
+####  Note:
 1. Before running the commands, go to the `core-frmk` directory.
 2. Create an environment variable file inside the `config` directory (`.env.test`, `.env.dev`, etc.) containing the `BASE_URL` parameter to configure the web URL for testing. This will allow you to easily manage the base URL used during your web tests.<br/>
 ```properties
 BASE_URL = https://example.com
 ```
 
-### Usage examples:
+#### Usage examples:
 To execute a specific test with default settings the next command line should be used:<br/>
 ```bash
 mvn clean test -Dtest=VerifyHomePageTest
@@ -205,7 +205,7 @@ mvn clean test -Dthreads=3
 ```
 
 <a id="four"></a>
-## 4. Generate Allure Report
+### 4. Generate Allure Report
 To generate a report by Allure after tests have finished, use the following command:<br/>
 ```bash
 mvn allure:report
@@ -218,7 +218,7 @@ mvn allure:serve
 ```
 This command starts a local web server and automatically opens the generated report in your default browser.<br/>
 
-### Allure Report Overview:
+#### Allure Report Overview:
 An example of the generated [Allure TestNG](https://allurereport.org/docs/testng/) report looks like this:<br/>
 <img width="1568" height="808" alt="overview" src="https://github.com/user-attachments/assets/a2054ad7-9e09-477e-a7ea-5a8662c13735" />
 

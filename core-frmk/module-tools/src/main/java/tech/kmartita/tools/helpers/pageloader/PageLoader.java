@@ -1,27 +1,28 @@
-package tech.kmartita.tools.helpers.ui.pagefactory;
+/**
+ * Author: Marta Kravchuk
+ */
+package tech.kmartita.tools.helpers.pageloader;
 
 import com.microsoft.playwright.Page;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiComponent;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiFind;
-import tech.kmartita.tools.helpers.ui.pagefactory.annotations.UiPage;
+import tech.kmartita.tools.helpers.pageloader.annotations.UiComponent;import tech.kmartita.tools.helpers.pageloader.annotations.UiFind;import tech.kmartita.tools.helpers.pageloader.annotations.UiPage;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class PageFactory {
+public class PageLoader {
 
     public static void initComponents(Object pageObject, Page page) {
         if (!pageObject.getClass().isAnnotationPresent(UiComponent.class)) {
-            throw new RuntimeException("Only components marked with @UiComponent can be initialized by the PageFactory.\n");
+            throw new RuntimeException("Only components marked with @UiComponent can be initialized by the PageLoader.\n");
         }
         initFields(pageObject, new ContainerDecorator(page));
     }
 
     public static void initPages(Object pageObject, Page page) {
         if (!pageObject.getClass().isAnnotationPresent(UiPage.class)) {
-            throw new RuntimeException("Only pages marked with @UiPage can be initialized by the PageFactory.\n");
+            throw new RuntimeException("Only pages marked with @UiPage can be initialized by the PageLoader.\n");
         }
         initFields(pageObject, new PageDecorator(page));
     }
