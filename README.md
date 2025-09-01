@@ -185,7 +185,7 @@ mvn test
 1. Before running the commands, go to the `core-frmk` directory.
 2. Create an environment variable file inside the `config` directory (`.env.test`, `.env.dev`, etc.) containing the `BASE_URL` parameter to configure the web URL for testing. This will allow you to easily manage the base URL used during your web tests.<br/>
 ```properties
-BASE_URL = https://example.com
+BASE_URL = https://demoqa.com
 ```
 
 #### Usage examples:
