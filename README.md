@@ -223,7 +223,7 @@ An example of the generated [Allure TestNG](https://allurereport.org/docs/testng
 <img width="1568" height="808" alt="overview" src="https://github.com/user-attachments/assets/a2054ad7-9e09-477e-a7ea-5a8662c13735" />
 
 Attached screenshot for failed test:<br/>
-<img width="1568" height="834" alt="failed_" src="https://github.com/user-attachments/assets/6f65b9cf-709c-4fd3-b385-ac25e1a2fe0f" />
+<img width="1568" height="949" alt="failed" src="https://github.com/user-attachments/assets/be2c8cb2-aa96-4e24-9f31-5081a61b50c6" />
 
 All steps are annotated:<br/>
 <img width="1568" height="668" alt="passed" src="https://github.com/user-attachments/assets/c0783d03-2b5f-4df8-ab5e-29c18f8caedc" />
